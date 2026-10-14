@@ -1,7 +1,7 @@
-from ConfidenceSequences.confidence_sequences import ConfidenceSequence
+from ConfidenceIntervals.confidence_intervals import ConfidenceInterval
 import numpy as np
 
-class HoeffdingCS(ConfidenceSequence):
+class HoeffdingCI(ConfidenceInterval):
     def __init__(self):
         super().__init__()
         self.count = 0
@@ -18,20 +18,7 @@ class HoeffdingCS(ConfidenceSequence):
             return 1.0
         n = self.count
         mean = self.total / n
-        log_term = np.log(n) + np.log(n + 1) - np.log(alpha)
+        log_term =  - np.log(alpha)
         radius = np.sqrt(log_term / (2 * n))
         return float(np.minimum(1.0, mean + radius))
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class ConfidenceSequence(ABC):
+class ConfidenceInterval(ABC):
     def __init__(self):
         pass
     
