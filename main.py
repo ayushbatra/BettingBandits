@@ -1,0 +1,23 @@
+from Algorithms.UCB1 import UCB1
+from ConfidenceSequences.HoeffdingCS import HoeffdingCS
+from common.Bernoulli import Bernoulli
+from common.Beta import Beta
+from Environment.Environment import Environment
+
+if __name__ == "__main__":
+    environment = Environment(
+        horizon=10000,
+        algorithm=UCB1,
+        algorithm_params={"cs_class": HoeffdingCS},
+        arm_classes=[Bernoulli, Beta],
+        arm_params=[
+            {"p": 0.6, "seed": 1},
+            {"alpha": 2, "beta": 3, "seed": 2},
+        ],
+    )
+
+    result = environment.run()
+
+    print("Regret:", result["regret"])
+    print("Pull counts:", result["pulls"])
+    print("Pull frequencies:", result["frequencies"])
