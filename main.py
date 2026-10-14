@@ -7,7 +7,7 @@ from Environment.Environment import Environment
 
 if __name__ == "__main__":
     environment = Environment(
-        horizon=10000,
+        horizon=10**5,
         algorithm=UCB1,
         algorithm_params={"ci_class": PredictablePluginEB},
         arm_classes=[Bernoulli, Beta],

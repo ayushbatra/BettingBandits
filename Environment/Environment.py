@@ -1,4 +1,5 @@
 import numpy as np
+from tqdm.auto import tqdm
 from Algorithms.bandit_algo import BanditAlgorithm
 from common.distributions import Distribution
 
@@ -18,7 +19,7 @@ class Environment:
         chosen_arms = np.zeros(self.horizon, dtype=int)
         rewards = np.zeros(self.horizon)
 
-        for t in range(self.horizon):
+        for t in tqdm(range(self.horizon), desc="Bandit simulation", unit="round"):
             arm = self.algorithm.choose_next_arm()
             reward = self.arms[arm].next_observation()
             self.algorithm.observe_reward(arm, reward)
