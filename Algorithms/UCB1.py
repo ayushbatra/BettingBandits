@@ -4,15 +4,16 @@ from Algorithms.bandit_algo import BanditAlgorithm
 from ConfidenceSequences.confidence_sequences import ConfidenceSequence
 
 class UCB1(BanditAlgorithm):
-    def __init__(self, n_arms: int, cs_class: type[ConfidenceSequence],horizon: int | None = None):
+    def __init__(self, n_arms: int, ci_class: type[ConfidenceSequence],horizon: int | None = None):
         super().__init__(n_arms=n_arms, horizon=horizon)
-        self.sequences = [cs_class() for _ in range(n_arms)]
+        self.sequences = [ci_class() for _ in range(n_arms)]
         self.counts = np.zeros(n_arms, dtype=int)
         self.rounds_completed = 0
+        self.ci_class = ci_class
 
     def alpha(self) -> float:
         t = self.rounds_completed
-        cs_alpha = getattr(self.cs_class, "alpha", None)
+        cs_alpha = getattr(self.ci_class, "alpha", None)
         if cs_alpha is not None:
             return cs_alpha(t)
         return 1.0 / (self.n_arms * t**4)

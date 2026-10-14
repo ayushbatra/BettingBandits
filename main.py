@@ -8,7 +8,7 @@ if __name__ == "__main__":
     environment = Environment(
         horizon=10000,
         algorithm=UCB1,
-        algorithm_params={"cs_class": HoeffdingCS},
+        algorithm_params={"ci_class": HoeffdingCS},
         arm_classes=[Bernoulli, Beta],
         arm_params=[
             {"p": 0.6, "seed": 1},
