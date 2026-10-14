@@ -1,5 +1,5 @@
 from Algorithms.UCB1 import UCB1
-from ConfidenceSequences.HoeffdingCS import HoeffdingCS
+from ConfidenceIntervals.HoeffdingCS import HoeffdingCS
 from common.Bernoulli import Bernoulli
 from common.Beta import Beta
 from Environment.Environment import Environment
