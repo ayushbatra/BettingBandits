@@ -1,17 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.optimize import minimize_scalar
-
-
-########################################
-#              Plot Bandit             #
-########################################
-def plot_bandit(bandit):
-    plt.figure(figsize=(12, 7))
-    plt.xticks(range(0, bandit.nbr_arms), range(0, bandit.nbr_arms))
-    plt.plot(range(0, bandit.nbr_arms), bandit.rewards)
-    plt.scatter(range(0, bandit.nbr_arms), bandit.rewards)
-    plt.show()
 
 
 ########################################

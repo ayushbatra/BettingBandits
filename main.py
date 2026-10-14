@@ -1,5 +1,5 @@
 from Algorithms.UCB1 import UCB1
-from ConfidenceIntervals.HoeffdingCS import HoeffdingCS
+from ConfidenceIntervals.HoeffdingCI import HoeffdingCI
 from common.Bernoulli import Bernoulli
 from common.Beta import Beta
 from Environment.Environment import Environment
@@ -8,7 +8,7 @@ if __name__ == "__main__":
     environment = Environment(
         horizon=10000,
         algorithm=UCB1,
-        algorithm_params={"ci_class": HoeffdingCS},
+        algorithm_params={"ci_class": HoeffdingCI},
         arm_classes=[Bernoulli, Beta],
         arm_params=[
             {"p": 0.6, "seed": 1},
