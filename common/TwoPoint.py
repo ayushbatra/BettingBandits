@@ -2,8 +2,8 @@ import numpy as np
 from common.distributions import Distribution
 
 class TwoPoint(Distribution):
-    def __init__(self, a, b, weight_a, weight_b, seed=None, divisions=None):
-        super().__init__(seed=seed, divisions=divisions)
+    def __init__(self, a, b, weight_a, weight_b, seed=None):
+        super().__init__(seed=seed)
         assert 0 <= a <= 1 and 0 <= b <= 1, "a and b must be in [0, 1]"
         assert np.isfinite(weight_a) and weight_a >= 0 and np.isfinite(weight_b) and weight_b >= 0 and np.isfinite(total) and total > 0, "Weights must be finite, nonnegative, with positive finite sum"
         

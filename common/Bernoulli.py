@@ -2,8 +2,8 @@ import numpy as np
 from common.distributions import Distribution
 
 class Bernoulli(Distribution):
-    def __init__(self, p, seed=None, divisions=None):
-        super().__init__(seed=seed, divisions=divisions)
+    def __init__(self, p, seed=None):
+        super().__init__(seed=seed)
         assert 0 <= p <= 1, "p must be between 0 and 1"
         self.p = p
 

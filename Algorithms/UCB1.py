@@ -4,9 +4,9 @@ from Algorithms.bandit_algo import BanditAlgorithm
 from ConfidenceSequences.confidence_sequences import ConfidenceSequence
 
 class UCB1(BanditAlgorithm):
-    def __init__(self, n_arms: int, cs_class: type[ConfidenceSequence],horizon: int | None = None, divisions: int | None = None):
+    def __init__(self, n_arms: int, cs_class: type[ConfidenceSequence],horizon: int | None = None):
         super().__init__(n_arms=n_arms, horizon=horizon)
-        self.sequences = [cs_class(divisions=divisions) for _ in range(n_arms)]
+        self.sequences = [cs_class() for _ in range(n_arms)]
         self.counts = np.zeros(n_arms, dtype=int)
         self.rounds_completed = 0
 

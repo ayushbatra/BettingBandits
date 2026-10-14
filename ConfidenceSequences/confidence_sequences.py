@@ -1,10 +1,9 @@
 from abc import ABC, abstractmethod
 
 class ConfidenceSequence(ABC):
-    def __init__(self, divisions: int | None = None):
-        assert divisions is None or (isinstance(divisions, int) and divisions > 0), "divisions must be a positive integer"
-        self.divisions = divisions
-
+    def __init__(self):
+        pass
+    
     @abstractmethod
     def observe(self, observation: float) -> None:
         """Incorporate one observation from the declared support."""
