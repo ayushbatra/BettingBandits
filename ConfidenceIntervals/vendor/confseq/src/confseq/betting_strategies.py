@@ -122,7 +122,8 @@ def lambda_Kelly(x, m):
         elif np.min(x[0:i]) >= m:
             lambdas[i] = 1 / m
         else:
-            lambdas[i] = root(EL_fn, x0=lambdas_init[i])["x"]
+            # lambdas[i] = root(EL_fn, x0=lambdas_init[i])["x"]
+            lambdas[i] = root(EL_fn, x0=lambdas_init[i])["x"].item()
     lambdas[np.isnan(lambdas)] = 0
     lambdas = lambdas
 
