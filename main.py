@@ -8,7 +8,7 @@ from Environment import Environment
 
 if __name__ == "__main__":
     environment = Environment(
-        horizon=10**3,
+        horizon=10**2,
         algorithm=UCB1,
         algorithm_params={"ci_class": Grapa},
         arm_classes=[Bernoulli, Beta],

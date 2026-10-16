@@ -3,7 +3,7 @@ import numpy as np
 from array import array
 
 from ConfidenceIntervals.vendor.confseq.src.confseq.betting import betting_cs
-from ConfidenceIntervals.vendor.confseq.src.confseq.betting_strategies import lambda_Kelly
+from ConfidenceIntervals.vendor.confseq.src.confseq.betting_strategies import lambda_aKelly
 
 
 class Grapa(ConfidenceInterval):
@@ -28,7 +28,7 @@ class Grapa(ConfidenceInterval):
                 x_array,
                 alpha=alpha,
                 lambdas_fns_positive=[
-                    lambda x, m: lambda_Kelly(x, np.clip(m, 1e-10, 1 - 1e-10))
+                    lambda x, m: lambda_aKelly(x, np.clip(m, 1e-10, 1 - 1e-10))
                 ],
                 theta=1,
                 trunc_scale=0.5,
