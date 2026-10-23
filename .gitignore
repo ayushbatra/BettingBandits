@@ -1,2 +1,6 @@
 venv
 */__pycache__/
+/vendor/*.pyc
+*/vendor/*.pyc
+tmp.py
+benchmark_results/
