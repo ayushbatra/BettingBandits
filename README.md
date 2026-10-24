@@ -1,2 +1,1 @@
-refernence tmp:
-https://github.com/gostevehoward/confseq/blob/master/src/confseq/predmix.py
+This git is part of project Betting Bandits, submission of course E1240 to Prof. Shubhada Agrawal.
